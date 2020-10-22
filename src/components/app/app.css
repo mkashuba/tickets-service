@@ -1,0 +1,917 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    color: #868685;
+    font-size: 14px;
+    font-family: "DINPro";
+    font-weight: 400;
+
+    background: url('../../assets/img/bg-image.png');
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.no-scroll {
+    overflow: hidden;
+    /* overflow-y: scroll; */
+}
+
+.fck-mb-150 {
+    margin-bottom: 150px;
+}
+
+.top-background {
+    background-color: #3575b8;
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 90px;
+}
+
+.bg-content {
+    position: relative;
+}
+
+.bg-content::before {
+    content: '';
+    display: block;
+    background-color: rgba(200, 200, 200, 0.1);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Event Detail Page */
+.event-detail__logo {
+    position: relative;
+    height: 500px;
+    color: #ffc800;
+    letter-spacing: 1px;
+}
+
+.detail-logo__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.detail-logo__title {
+    display: block;
+    width: 100%;
+    font-family: "FuturaFuturis";
+    font-size: 30px;
+    font-weight: 700;
+    border-bottom: 5px solid #ffc800;
+}
+
+.detail-logo__subtitle {
+    display: block;
+    width: 100%;
+    font-family: "FuturaFuturis";
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.detail-data__title {
+    margin-bottom: 30px;
+    font-family: "FuturaFuturis";
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.detail-data__desc {
+    font-family: "FuturaFuturis";
+    line-height: 1.2;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.detail-data__container {
+    font-family: "FuturaFuturis";
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.data-yellow {
+    color: #ffc800;
+}
+
+.buy-tickets {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 35px;
+    color: #ffc800;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.buy-tickets:hover {
+    text-decoration: none;
+    color: #868685;
+
+}
+
+/* Shopping cart */
+.cart-warning {
+    font-family: "FuturaFuturis";
+    font-size: 16px;
+    color: #ff1632;
+}
+
+.cart-info {
+    font-family: "FuturaFuturis";
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    padding: 15px;
+    border: 1px solid #868685;
+}
+
+.cart-info__title {
+    width: 80%;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.cart-info__del {
+    width: 20%;
+    color: #ffc800;
+    font-weight: 900;
+    text-align: right;
+}
+
+.cart-info__tickets {
+    margin-top: 12px;
+    width: 40%;
+    font-size: 18px;
+}
+
+.cart-info__terms-n-conditions {
+    width: 60%;
+    text-align: right;
+    align-self: flex-end;
+}
+
+.cart-info__tickets-list {
+    width: 70%;
+}
+
+.cart-info__tickets-list tr {
+    border-bottom: 1px solid #868685;
+}
+
+.cart-info__tickets-list tr:first-of-type {
+    border-bottom: none;
+}
+
+.row-ticket {
+    width: 45%
+}
+
+.place-ticket {
+    width: 45%
+}
+
+.del-ticket {
+    width: 10%;
+    text-align: right;
+}
+
+.cart-info__amount {
+    width: 70%;
+    margin: 8px 0;
+}
+
+.btn-pay {
+    display: block;
+    width: 70%;
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background-color: #868685;
+
+}
+
+.btn-pay:hover {
+    text-decoration: none;
+    color: #ffc800;
+}
+
+/* Paying */
+.payment-methods-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 15px;
+    align-items: center;
+    font-size: 60px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.payment-method-radio {
+    margin-right: 5px;
+}
+
+.btn-in-methods {
+    margin-top: 50px;
+    margin-left: auto;
+    min-width: 100px;
+    max-width: 200px;
+}
+
+/* Success */
+.without-border {
+    border: none;
+    font-size: 18px;
+}
+
+.cart-info__success-txt {
+    width: 100%;
+    margin-top: 15px;
+    color: #07ace8;
+}
+
+.cart-info__return-to-main {
+    margin-top: 35px;
+    width: 100%;
+    color: #ffc800;
+}
+
+.cart-info__download-ticket {
+    margin-top: 55px;
+    width: 100%;
+}
+
+/* Hall Schemes */
+
+.left-arrow {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 30px;
+    z-index: 1;
+}
+
+.right-arrow {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 30px;
+    z-index: 1;
+}
+
+.fa-chevron-left:hover,
+.fa-chevron-right:hover {
+    cursor: pointer;
+    color: #ffc800;
+}
+
+
+.hall-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-width: 600px;
+    position: relative;
+}
+
+.hall-main-side {
+    width: 50%
+}
+
+.hall-left-side {
+    width: 25%;
+    margin-right: 20px;
+    margin-top: -36px;
+    transform: rotate(30deg);
+}
+
+.hall-right-side {
+    width: 25%;
+    margin-left: 20px;
+    margin-top: -36px;
+    transform: rotate(-30deg);
+
+}
+
+.hall-big {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    min-width: 600px;
+    position: relative;
+
+}
+
+.hall-big-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+
+    margin-top: 2px;
+}
+
+.fck-content-right {
+    justify-content: flex-end;
+}
+
+.fck-content-left {
+    justify-content: flex-start;
+}
+
+.hall {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.hall-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    min-width: 500px;
+
+    margin-top: 3px;
+}
+
+.hall-place {
+    width: 4%;
+    min-width: 12px;
+    max-width: 12px;
+    min-height: 12px;
+    max-height: 12px;
+
+    font-size: 8px;
+    color: #07ace8;
+    border: 1px solid #07ace8;
+    cursor: pointer;
+    text-align: center;
+}
+
+.high-price .hall-place {
+    background-color: rgb(253, 253, 135);
+}
+
+.medium-price .hall-place {
+    background-color: rgb(255, 203, 231);
+}
+
+.low-price .hall-place {
+    background-color: rgb(209, 255, 203);
+}
+
+
+.hall-place:hover {
+    background-color: #ffc800;
+}
+
+.sm-stage-container {
+    font-family: "FuturaFuturis";
+
+}
+
+.sm-stage {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.sm-stage__scene {
+    width: 60%;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: #07ace8;
+}
+
+.sm-stage__exits-top {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.sm-exit-left {
+    width: 20%;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #07ace8;
+    border: 1px solid #07ace8;
+}
+
+.sm-exit-right {
+    width: 20%;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #07ace8;
+    border: 1px solid #07ace8;
+}
+
+.sm-exits-container {
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    margin-top: 30px;
+    min-width: 700px;
+
+    font-family: "FuturaFuturis";
+
+}
+
+.sm-exit-left-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 25%;
+}
+
+.sm-exit-right-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 25%;
+}
+
+.stage-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    min-width: 600px;
+
+    font-family: "FuturaFuturis";
+}
+
+.stage {
+    text-align: center;
+    width: 80%;
+}
+
+.stage__scene {
+    width: 100%;
+    /* padding: 15px; */
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-color: #07ace8;
+}
+
+.stage__parket {
+    margin-top: 20px;
+    color: #07ace8;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.exit-left {
+    width: 20%;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #07ace8;
+    border: 1px solid #07ace8;
+}
+
+.exit-right {
+    width: 20%;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    color: #07ace8;
+    border: 1px solid #07ace8;
+}
+
+.exits-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    text-align: center;
+    margin-top: -30px;
+    min-width: 600px;
+
+    font-family: "FuturaFuturis";
+
+}
+
+.exit-left-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 25%;
+}
+
+.hall-name {
+    width: 50%;
+    color: #3575b8;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.exit-right-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 25%;
+}
+
+.exit__txt {
+    color: #07ace8;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.exit__block {
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+    color: #07ace8;
+    border: 1px solid #07ace8;
+}
+
+.process-paying {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    font-size: 40px;
+    color: #868686;
+    backdrop-filter: blur(10px);
+}
+
+/* Registration */
+
+.reg-form {
+    display: flex;
+    flex-direction: column;
+    font-family: "FuturaFuturis";
+    font-size: 20px;
+}
+
+legend {
+    font-weight: 900;
+}
+
+.reg-form-row {
+    display: flex;
+    width: 100%;
+}
+
+.reg-form__address {
+    width: 50%;
+}
+
+.reg-form__contacts {
+    width: 50%;
+    margin-left: 15px;
+}
+
+select,
+input {
+    width: 100%;
+    padding-top: 3px;
+
+    color: #868686;
+
+    border: none;
+    border-bottom: 1px solid #868686;
+    background-color: transparent;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ffc800;
+
+}
+
+button {
+    align-self: flex-end;
+}
+
+.reg-form__terms {
+    margin-top: 25px;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.terms__container {
+    display: flex;
+}
+
+.terms__container input {
+    width: auto;
+}
+
+.terms__container label {
+    margin-left: 15px;
+}
+
+.btn-reg {
+    display: block;
+    border: 0;
+    padding: 5px 25px;
+    text-align: center;
+    color: white;
+    background-color: #868685;
+
+}
+
+.btn-reg:hover {
+    text-decoration: none;
+    color: #ffc800;
+}
+
+.pass-container {
+    position: relative;
+}
+
+.fa-eye {
+    font-size: 16px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(0, -50%)
+}
+
+/* Login */
+.reg-title {
+    font-family: "FuturaFuturis";
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.login-form {
+    width: 60%;
+    margin-top: 15px;
+
+    font-family: "FuturaFuturis";
+    font-size: 20px;
+}
+
+.forgot-pass {
+    margin-top: 15px;
+    color: #ffc800;
+    font-size: 12px;
+}
+
+.login-form button {
+    margin-top: 15px;
+}
+
+.btn-login {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+
+    border: 0;
+    padding: 5px 25px;
+    text-align: center;
+    color: white;
+    background-color: #868685;
+    font-family: "FuturaFuturis";
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.btn-login:hover {
+    text-decoration: none;
+    color: #ffc800;
+}
+
+/* Confirm code */
+.confirm-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    font-family: "FuturaFuturis";
+    font-size: 20px;
+    color: #868686;
+    backdrop-filter: blur(10px);
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+
+    border: 0;
+    padding: 5px 25px;
+    text-align: center;
+    color: white;
+    background-color: #868685;
+    font-family: "FuturaFuturis";
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.btn-submit:hover {
+    text-decoration: none;
+    color: #ffc800;
+}
+
+
+
+
+/* Buy Tickets
+====================================*/
+.buy-tickets__title {
+    font-family: "FuturaFuturis";
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.tickets-selection-area {
+    max-height: 600px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+}
+
+.tickets-info-area {
+    font-family: "FuturaFuturis";
+    font-size: 18px;
+}
+
+.tickets-info-area__tickets {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.tickets-info-area__tickets-list {
+    width: 100%;
+}
+
+.tickets-info-area__tickets-list tr {
+    border-bottom: 1px solid #868685;
+}
+
+.tickets-info-area__tickets-list tr:first-of-type {
+    border-bottom: none;
+}
+
+.tickets-info-area__tickets-list .row-ticket {
+    width: 45%
+}
+
+.tickets-info-area__tickets-list .place-ticket {
+    width: 45%
+}
+
+.tickets-info-area__tickets-list .del-ticket {
+    width: 10%;
+    text-align: right;
+}
+
+.tickets-info-area__amount {
+    width: 100%;
+    margin: 8px 0;
+}
+
+.btn-to-card {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background-color: #868685;
+
+}
+
+.btn-to-card:hover {
+    text-decoration: none;
+    color: #ffc800;
+}
+
+.prices__range .high-price {
+    background-color: rgb(253, 253, 135);
+}
+
+.prices__range .medium-price {
+    background-color: rgb(255, 203, 231);
+}
+
+.prices__range .low-price {
+    background-color: rgb(209, 255, 203);
+}
+
+.tickets-info-area__prices {
+    font-weight: 900;
+}
+
+.range {
+    padding-left: 15px;
+}
+
+@font-face {
+    font-family: "DINPro";
+    src: url("../../assets/fonts/DINPro-Light.otf") format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "DINPro";
+    src: url("../../assets/fonts/DINPro-Regular.otf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "DINPro";
+    src: url("../../assets/fonts/DINPro-CondBold.otf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "DINPro";
+    src: url("../../assets/fonts/DINPro-Black.otf") format("truetype");
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "FuturaFuturis";
+    src: url("../../assets/fonts/FUTURAFUTURIS.OTF") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "FuturaFuturis";
+    src: url("../../assets/fonts/FUTURAFUTURIS-BOLD.OTF") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}

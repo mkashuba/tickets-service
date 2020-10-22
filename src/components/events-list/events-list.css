@@ -1,0 +1,27 @@
+.events-list {
+    margin: 15px 0 15px 0;
+}
+
+
+.main-title__container {
+    display: flex;
+    align-items: center;
+}
+
+.main-title__container i {
+    font-size: 20px;
+}
+
+.main-title {
+    font-size: 36px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-bottom: 10px solid #868685;
+}
+
+.main-title__type {
+    margin-left: 5px;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+}

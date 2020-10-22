@@ -1,0 +1,55 @@
+.menu {
+    position: fixed;
+    z-index: 999;
+
+    width: 100%;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    background-color: #868685;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.menu__social-icons {
+    list-style-type: none;
+    margin: 15px 0 0 0;
+    padding: 0;
+}
+
+.menu__social-icons>li {
+    display: inline-block;
+    margin-left: 12px;
+    color: white;
+}
+
+.menu__social-icons li:first-child {
+    margin-left: 0;
+}
+
+.menu__social-icons>li>i {
+    font-size: 32px;
+}
+
+.contacts {
+    margin: 25px 0 0 0;
+}
+
+.navigation {
+    list-style-type: none;
+
+    text-transform: uppercase;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+.close-icon {
+    font-size: 24px;
+    margin-top: 45px;
+    cursor: pointer;
+}

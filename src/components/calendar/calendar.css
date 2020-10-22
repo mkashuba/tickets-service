@@ -1,0 +1,21 @@
+.calendar__title {
+    margin-top: 35px;
+    font-family: "FuturaFuturis";
+    font-size: 20px;
+    font-weight: 400;
+    height: 200px;
+}
+
+.calendar {
+    height: 200px;
+    margin-top: 15px;
+    background-color: slateblue;
+}
+
+.title {
+    margin-top: 35px;
+    font-family: "FuturaFuturis";
+    font-size: 20px;
+    font-weight: 400;
+
+}
