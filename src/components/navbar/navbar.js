@@ -3,13 +3,19 @@ import React from 'react';
 import './navbar.css';
 import logoWhite from '../../assets/img/logo_white.svg';
 
+import {Link} from 'react-router-dom';
+
 
 const Navbar = (props) => {
     return (
         <div className="row">
-            <div className="col-3 logo">
-                <img className="logo__img" src={logoWhite} alt="Tickets Service Logo"/>
-            </div>
+            
+                <div className="col-3 logo">
+                    <Link to='/'>
+                        <img className="logo__img" src={logoWhite} alt="Tickets Service Logo"/>
+                    </Link>
+                </div>
+            
             <div className="col-9 header">
                 <div className="container">
                     <div className="row justify-content-between align-items-end">

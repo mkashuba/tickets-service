@@ -2,6 +2,7 @@ import React from 'react';
 
 import './upcoming-events-item.css';
 
+
 const UpcomingEventsItem = ({item, onEventClick}) => {
 
     const {_id: {$oid}, artist, eventName, eventStart, images, ticketsStatus} = item;

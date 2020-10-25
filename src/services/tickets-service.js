@@ -16,6 +16,11 @@ export default class TicketsServiceApi {
         const res = await this.getResource('events');
         return res;
     }
+
+    getEventDetails = async (id) => {
+        const res = await this.getResource(`events/${id}`);
+        return res;
+    }
     
 
 }
