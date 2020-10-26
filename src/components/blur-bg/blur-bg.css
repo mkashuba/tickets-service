@@ -8,6 +8,6 @@
     z-index: 999;
     font-size: 40px;
     color: #868686;
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }

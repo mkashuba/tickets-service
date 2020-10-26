@@ -78,28 +78,7 @@ h6 {
 
 
 
-/* Success */
-.without-border {
-    border: none;
-    font-size: 18px;
-}
 
-.cart-info__success-txt {
-    width: 100%;
-    margin-top: 15px;
-    color: #07ace8;
-}
-
-.cart-info__return-to-main {
-    margin-top: 35px;
-    width: 100%;
-    color: #ffc800;
-}
-
-.cart-info__download-ticket {
-    margin-top: 55px;
-    width: 100%;
-}
 
 /* Hall Schemes */
 

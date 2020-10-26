@@ -23,6 +23,7 @@ class PageContainer extends Component {
 
   componentDidMount() {
     this.showScroll();
+    console.log("Did Mount in Page Container")
   }
 
   componentDidUpdate(prevProps, prevState) {

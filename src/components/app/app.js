@@ -10,6 +10,7 @@ import EventDetailsPage from '../pages/event-details-page';
 import ShoppingCartPage from '../pages/shopping-cart-page';
 import TermsPage from '../pages/terms-page';
 import PayingPage from '../pages/paying-page';
+import SuccessPage from '../pages/success-page';
 
 
 export default class App extends Component {
@@ -29,6 +30,7 @@ export default class App extends Component {
           <Route path='/shopping-cart' component={ShoppingCartPage} />
           <Route path='/terms' component={TermsPage} />
           <Route path='/paying' component={PayingPage} />
+          <Route path='/success' component={SuccessPage} />
         </Router>
       </ErrorBoundry>
 

@@ -4,7 +4,7 @@ import './blur-bg.css';
 
 const BlurBg = () => {
     return (
-        <div class="process-paying">Proceed paying success</div>
+        <div className="process-paying">Proceed paying success</div>
     );
 }
 
