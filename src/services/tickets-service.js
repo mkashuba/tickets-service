@@ -19,6 +19,23 @@ export default class TicketsServiceApi {
 
     getEventDetails = async (id) => {
         const res = await this.getResource(`events/${id}`);
+        return this._transformEventDetails(res);
+    }
+
+    _transformEventDetails = (event) => {
+        const transformedEvent = {
+            eventName: null,
+            artist: null,
+            eventStart: null,
+            description: null,
+            images: null,
+            ticketsStatus: null,
+            ticketsAmount: null,
+            ticketsSold: null,
+            priceRanges: null
+        }
+
+        const res = {...transformedEvent, ...event};
         return res;
     }
     

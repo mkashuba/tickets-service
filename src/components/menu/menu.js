@@ -3,6 +3,8 @@ import React from 'react';
 import './menu.css';
 import logoWhite from '../../assets/img/logo_white.svg';
 
+import {Link} from 'react-router-dom';
+
 
 const Menu = (props) => {
     return (
@@ -11,17 +13,17 @@ const Menu = (props) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-3">
-                            <img className="logo__img" src={logoWhite} alt="mainLogo}"/>
+                            <Link to='/'><img className="logo__img" src={logoWhite} alt="mainLogo}"/></Link>
                         </div>
                         <div className="col-4">
                             <span>Berlin City Hall | Events and Tickets</span>
                             <ul className="menu__social-icons">
-                                <li><i className="fab fa-youtube"></i></li>
-                                <li><i className="fab fa-facebook"></i></li>
-                                <li><i className="fab fa-twitter"></i></li>
-                                <li><i className="fab fa-instagram"></i></li>
-                                <li><i className="fab fa-odnoklassniki"></i></li>
-                                <li><i className="fas fa-rss"></i></li>
+                                <li><Link to='//youtube.com' target='_blank'><i className="fab fa-youtube"></i></Link></li>
+                                <li><Link to='//facebook.com' target='_blank'><i className="fab fa-facebook"></i></Link></li>
+                                <li><Link to='//twitter.com' target='_blank'><i className="fab fa-twitter"></i></Link></li>
+                                <li><Link to='//instagram.com' target='_blank'><i className="fab fa-instagram"></i></Link></li>
+                                <li><Link to='//odnoklassniki.ru' target='_blank'><i className="fab fa-odnoklassniki"></i></Link></li>
+                                <li><Link to='/' target='_blank'><i className="fas fa-rss"></i></Link></li>
                             </ul>
                             <div className="contacts">
                                 <div className="contacts__name">Berlin City Hall</div>
@@ -32,11 +34,11 @@ const Menu = (props) => {
                         </div>
                         <div className="col-2 offset-md-2 align-self-center">
                             <ul className="navigation">
-                                <li className="navigation_link">Login/out</li>
-                                <li className="navigation_link">Events</li>
-                                <li className="navigation_link">Shopping cart</li>
-                                <li className="navigation_link">Halls scheme</li>
-                                <li className="navigation_link">About us</li>
+                                <Link to='/'><li className="navigation_link">Login/out</li></Link>
+                                <Link to='/'><li className="navigation_link">Events</li></Link>
+                                <Link to='/shopping-cart'><li className="navigation_link">Shopping cart</li></Link>
+                                <Link to='/'><li className="navigation_link">Halls scheme</li></Link>
+                                <Link to='/'><li className="navigation_link">About us</li></Link>
                             </ul>
                         </div>
                         <div className="col-1 d-flex justify-content-end">

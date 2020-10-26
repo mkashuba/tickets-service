@@ -12,7 +12,7 @@ export default class EventDetails extends Component {
         console.log("Constructor")
     }
 
-    state ={
+    state = {
         eventDetails: null,
         loading: true,
         error: false
@@ -52,9 +52,6 @@ export default class EventDetails extends Component {
 
     render() {
         const {eventDetails, loading, error} = this.state;
-        console.log("Error is: ", error);
-        console.log("Render event details: ", eventDetails);
-
 
         if(loading) {
             return <Spinner />;
@@ -64,10 +61,16 @@ export default class EventDetails extends Component {
             return <ErrorIndicator />;
         }
 
-        const range = eventDetails.priceRanges;
-        const startPrice = range[range.length-1].price;
-        const endPrice = range[0].price;
+        let range;
+        let startPrice;
+        let endPrice;
 
+        if(eventDetails.priceRanges){
+            range = eventDetails.priceRanges;
+            startPrice = range[range.length-1].price;
+            endPrice = range[0].price;
+        }
+        
         return (
             <Fragment>
                 <div className="container">
