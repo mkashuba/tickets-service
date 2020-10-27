@@ -1,0 +1,92 @@
+.reg-form {
+    display: flex;
+    flex-direction: column;
+    font-family: "FuturaFuturis";
+    font-size: 20px;
+}
+
+legend {
+    font-weight: 900;
+}
+
+.reg-form-row {
+    display: flex;
+    width: 100%;
+}
+
+.reg-form__address {
+    width: 50%;
+}
+
+.reg-form__contacts {
+    width: 50%;
+    margin-left: 15px;
+}
+
+select,
+input {
+    width: 100%;
+    padding-top: 3px;
+
+    color: #868686;
+
+    border: none;
+    border-bottom: 1px solid #868686;
+    background-color: transparent;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ffc800;
+
+}
+
+button {
+    align-self: flex-end;
+}
+
+.reg-form__terms {
+    margin-top: 25px;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.terms__container {
+    display: flex;
+}
+
+.terms__container input {
+    width: auto;
+}
+
+.terms__container label {
+    margin-left: 15px;
+}
+
+.btn-reg {
+    display: block;
+    border: 0;
+    padding: 5px 25px;
+    text-align: center;
+    color: white;
+    background-color: #868685;
+
+}
+
+.btn-reg:hover {
+    text-decoration: none;
+    color: #ffc800;
+}
+
+.pass-container {
+    position: relative;
+}
+
+.fa-eye {
+    font-size: 16px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translate(0, -50%)
+}
