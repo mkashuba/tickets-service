@@ -3,7 +3,7 @@ import React from 'react';
 import './navbar.css';
 import logoWhite from '../../assets/img/logo_white.svg';
 
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
 
 const Navbar = (props) => {
@@ -35,10 +35,10 @@ const Navbar = (props) => {
                     </div>
                     <div className="row justify-content-between align-items-end mt-3">
                         <div className="col-7 login-lang">
-                            <span className="login">Login</span>
+                            <NavLink to='/login' activeClassName="active" className="login">Login</NavLink>
                             <ul className="lang">
                                 <li className="lang__item">De</li>
-                                <li className="lang__item active">Ru</li>
+                                <li className="lang__item active">En</li>
                             </ul>
                         </div>
                         <div className="col-2 d-flex justify-content-end">

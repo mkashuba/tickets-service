@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import UpcomingEventsList from '../upcoming-events-list/upcoming-events-list';
 import Menu from '../menu';
 import Navbar from '../navbar';
-import Calendar from '../calendar';
+import CalendarContainer from '../calendar';
 import Footer from '../footer';
 import ErrorBoundry from '../error-boundry/error-boundry';
 import TicketsServiceApi from '../../services/tickets-service';
@@ -96,7 +96,7 @@ class PageContainer extends Component {
             {isPayingProccess}
     
               <div className="col-3">
-                  <Calendar />
+                  <CalendarContainer />
                   <ErrorBoundry><UpcomingEventsList getData={this.ticketServiceApi.getAllEvents} onEventClick={this.onEventClick} /></ErrorBoundry>
               </div>
               <div className="col-9">

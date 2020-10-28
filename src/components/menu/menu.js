@@ -34,10 +34,10 @@ const Menu = (props) => {
                         </div>
                         <div className="col-2 offset-md-2 align-self-center">
                             <ul className="navigation">
-                                <Link to='/'><li className="navigation_link">Login/out</li></Link>
+                                <Link to='/login'><li className="navigation_link">Login/out</li></Link>
                                 <Link to='/'><li className="navigation_link">Events</li></Link>
                                 <Link to='/shopping-cart'><li className="navigation_link">Shopping cart</li></Link>
-                                <Link to='/'><li className="navigation_link">Halls scheme</li></Link>
+                                <Link to='/halls-schemes'><li className="navigation_link">Halls scheme</li></Link>
                                 <Link to='/'><li className="navigation_link">About us</li></Link>
                             </ul>
                         </div>

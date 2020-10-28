@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import {Link} from 'react-router-dom';
 
 import './login.css';
 
@@ -26,7 +27,7 @@ const Login = () => {
                         </div>
                         <div className="col">
                             <div className="reg-title">New customer</div>
-                            <button type="button" className="btn-login">Register</button>
+                            <Link to='/registration'><button type="button" className="btn-login">Register</button></Link>
                             <button type="button" className="btn-login">Login with invitation code</button>
                         </div>
                     </div>

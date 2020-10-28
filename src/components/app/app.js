@@ -13,6 +13,7 @@ import PayingPage from '../pages/paying-page';
 import SuccessPage from '../pages/success-page';
 import RegistrationPage from '../pages/registration-page';
 import LoginPage from '../pages/login-page';
+import HallsSchemesPage from '../pages/halls-schemes-page';
 
 
 export default class App extends Component {
@@ -35,6 +36,7 @@ export default class App extends Component {
           <Route path='/success' component={SuccessPage} />
           <Route path='/registration' component={RegistrationPage} />
           <Route path='/login' component={LoginPage} />
+          <Route path='/halls-schemes' component={HallsSchemesPage} />
         </Router>
       </ErrorBoundry>
 

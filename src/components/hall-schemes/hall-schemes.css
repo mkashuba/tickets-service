@@ -1,0 +1,30 @@
+img {
+    width: 100%;
+}
+
+.left-arrow {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 30px;
+    z-index: 1;
+}
+
+.right-arrow {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    font-size: 30px;
+    z-index: 1;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+    font-size: 30px;
+}

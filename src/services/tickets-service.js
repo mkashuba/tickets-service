@@ -38,6 +38,33 @@ export default class TicketsServiceApi {
         const res = {...transformedEvent, ...event};
         return res;
     }
+
+    setResource = async (url, data) => {
+        let headers = new Headers();
+        headers.append("Content-Type", "application/json");
+
+        const requestOptions = {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(data),
+            redirect: 'follow'
+          };
+
+        const res = await fetch(`${this._apiBase}${url}${this._apiKey}`, requestOptions);
+
+        if (!res.ok) {
+        throw new Error(`Could not fetch ${url}` +
+            `, received ${res.status}`)
+        }
+
+        return await res.json();
+
+    };
+
+    setUser = async (user) => {
+        const res = await this.setResource('users', user);
+        return res;
+    }
     
 
 }

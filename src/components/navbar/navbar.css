@@ -47,7 +47,14 @@
 }
 
 .login {
+    text-decoration: none;
+    color: #868685;
+}
+
+.login:hover, .active {
     border-bottom: 5px solid #868685;
+    text-decoration: none;
+    color: #868685;
 }
 
 .lang {
