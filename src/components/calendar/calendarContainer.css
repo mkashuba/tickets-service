@@ -18,3 +18,58 @@
     font-weight: 400;
 
 }
+
+.custom-style {
+    font-family: "FuturaFuturis";
+    
+    font-size: 16px;
+    border: none;
+    background-color: #fafafa;
+    color: #868685;
+
+}
+
+.custom-style .react-calendar__navigation {
+    height: auto;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color: #868685;
+}
+
+.custom-style .react-calendar__navigation__label {
+    font-size: 16px;
+    color: #868685;
+}
+
+.custom-style .react-calendar__month-view__weekdays {
+    border-bottom: 1px solid #868685;
+}
+
+.custom-style .react-calendar__month-view__weekdays__weekday {
+    padding: 0em;
+}
+
+.custom-style .react-calendar__month-view__days__day {
+    color: #868685;
+}
+
+.custom-style .react-calendar__month-view__days__day--weekend {
+    color: #868685;
+}
+
+.custom-style .react-calendar__month-view__days__day--neighboringMonth {
+    color: #d7d7d7;
+}
+
+.custom-style .react-calendar__tile {
+    padding: 0.25em 0.5em;
+}
+
+.custom-style .react-calendar__tile--active {
+    background: #ffc800;
+    color: white;
+}
+
+.custom-style .react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus {
+    background: #ffc800;;
+}
