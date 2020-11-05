@@ -32,7 +32,7 @@ export default class CalendarContainer extends Component {
                             onChange={this.onChange}
                             onClickDay={(value, event) => console.log('Clicked day: ', value)}
                             selectRange
-                            value={this.state.date}
+                            // value={this.state.date}
                             next2Label={null}
                             prev2Label={null}
                             className="custom-style"

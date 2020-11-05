@@ -1,4 +1,5 @@
 import React, {Component, Fragment } from 'react';
+import {Link} from 'react-router-dom';
 
 import './event-details.css';
 
@@ -110,7 +111,7 @@ export default class EventDetails extends Component {
                                     <div className="detail-data__tickets">Tickets available - <span className="data-yellow">{eventDetails.ticketsAmount - eventDetails.ticketsSold}</span></div>
                                     <div className="detail-data__price">Price range: <span className="data-yellow">{startPrice} - {endPrice}</span></div>
                                 </div>
-                                <span className="buy-tickets">Buy Tickets</span>
+                                <Link to='/choose-tickets' className="buy-tickets">Buy Tickets</Link>
                             </div>
                         </div>
                     </div>
