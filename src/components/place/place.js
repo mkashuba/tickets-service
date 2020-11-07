@@ -4,7 +4,7 @@ import './place.css';
 
 export default class Place extends Component {
 
-    state ={
+    state = {
         color: '',
         chooseSeat: false,
         freeSeat: true,
@@ -14,6 +14,17 @@ export default class Place extends Component {
     componentDidMount() {
         this.setDefaultColor();
         this.setCoordinates();
+    }
+
+    componentDidUpdate(prevProps) {
+      if(this.props.deletedSeat !== prevProps.deletedSeat) {
+        if(this.state.coordinates.row === this.props.deletedSeat.row && this.state.coordinates.seat === this.props.deletedSeat.seat && this.state.coordinates.side === this.props.deletedSeat.side) {
+            this.setState({
+              color: this.props.color,
+              chooseSeat: false
+            })
+        }
+      }
     }
 
     setDefaultColor = () => {
@@ -26,7 +37,7 @@ export default class Place extends Component {
 
     setCoordinates = () => {
       this.setState({
-        coordinates: {row: this.props.rowNumber, seat: this.props.placeNumber}
+        coordinates: {row: this.props.rowNumber, seat: this.props.placeNumber, price: this.props.price, side: this.props.side}
       })
     }
 
@@ -44,6 +55,10 @@ export default class Place extends Component {
           chooseSeat: false,
           color: this.props.color
         })
+
+        const a = this.props.onSelectSeat;
+        a(this.state.coordinates, false);
+
       } else {
         this.setState({
           chooseSeat: true,
@@ -51,12 +66,13 @@ export default class Place extends Component {
         })
 
         const a = this.props.onSelectSeat;
-        a(this.state.coordinates);
+        a(this.state.coordinates, true);
 
       }
     }
 
     render(){
+
         return (
         <div className={`hall-place data-place-${this.props.placeNumber}`}
             style={{backgroundColor: `${this.state.color}`}}
@@ -68,5 +84,5 @@ export default class Place extends Component {
         </div>
     );
     }
-    
+
 }

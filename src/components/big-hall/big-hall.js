@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import './big-hall.css';
 
-import Place from '../place';
 import Row from '../row';
 
 
@@ -35,7 +34,7 @@ const StageContainer = () => {
     );
 }
 
-const BigHall = ({priceRanges, onSelectSeat}) => {
+const BigHall = ({priceRanges, onSelectSeat, deletedSeat}) => {
 
     const getLastRowInRange = (item) => {
         let arrPropsNames = Object.getOwnPropertyNames(item.seats);
@@ -96,7 +95,7 @@ const BigHall = ({priceRanges, onSelectSeat}) => {
 
     }
 
-    const coloredRows = (priceRanges, drawnRowAndSeats) => {
+    const coloredRows = (priceRanges, drawnRowAndSeats, side) => {
 
       let coloredRows = [];
 
@@ -107,7 +106,7 @@ const BigHall = ({priceRanges, onSelectSeat}) => {
               let count = ++i;
               if(count >=  getFirstRowInRange(item) && count <= getLastRowInRange(item)) {
 
-                  coloredRows.push(<Row color={item.color} key={count} {...row.props}/>);
+                  coloredRows.push(<Row color={item.color} side={side} deletedSeat={deletedSeat} price={item.price} key={count} {...row.props}/>);
 
               }
           })
@@ -117,12 +116,12 @@ const BigHall = ({priceRanges, onSelectSeat}) => {
     }
 
     let left = [...drawSidesTop(3, 8), ...drawSidesBottom(10, 14, 'right')];
-    let coloredLeft = coloredRows(priceRanges, left);
+    let coloredLeft = coloredRows(priceRanges, left, 'L');
     let coloredLeftTop = coloredLeft.filter((item, i) => i <= 8)
     let coloredLeftBottom = coloredLeft.filter((item, i) => i >= 9)
 
     let right = [...drawSidesTop(3, 8), ...drawSidesBottom(10, 14, 'left')]
-    let coloredRight = coloredRows(priceRanges, right);
+    let coloredRight = coloredRows(priceRanges, right, 'R');
     let coloredRightTop = coloredRight.filter((item, i) => i <= 8)
     let coloredRightBottom = coloredRight.filter((item, i) => i >= 9)
 

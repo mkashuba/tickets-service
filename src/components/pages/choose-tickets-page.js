@@ -20,7 +20,7 @@ export default class ChooseTicketsPage extends Component {
             "8M"
           ]
         },
-        price: 120,
+        price: 500,
         color: "rgb(253, 253, 135)"
       },
       {
@@ -34,7 +34,7 @@ export default class ChooseTicketsPage extends Component {
               "8M"
             ]
           },
-          price: 120,
+          price: 430,
           color: "rgb(255, 203, 231)"
         },
         {
@@ -48,26 +48,50 @@ export default class ChooseTicketsPage extends Component {
               "8M"
             ]
           },
-          price: 120,
+          price: 300,
           color: "rgb(209, 255, 203)"
         },
         
     ];
 
     state = {
+      deletedSeat: {},
       coordinates: []
     }
 
-    onSelectSeat = (coordinate) => {
+    onSelectSeat = (coordinate, isSelected) => {
+      if(isSelected) {
+        this.setState(({coordinates}) => {
+          const newArr = [...coordinates, coordinate];
+          return {
+            coordinates: newArr
+          }
+        })
+      } else {
+        this.onDeleteSelectedSeat(coordinate.row, coordinate.seat, coordinate.side)
+      }
+      
+    }
+
+    onDeleteSelectedSeat = (row, seat, side) => {
       this.setState(({coordinates}) => {
-        const newArr = [...coordinates, coordinate];
+        const idx = coordinates.findIndex((item) => {
+          return row === item.row && seat === item.seat && side === item.side;
+        })
+  
+        const before = coordinates.slice(0, idx);
+        const after = coordinates.slice(idx + 1);
+        const newArr = [...before, ...after];
         return {
+          deletedSeat: {row: row, seat: seat, side: side},
           coordinates: newArr
         }
       })
+      
     }
 
   render() {
+
     return (
           <ErrorBoundry>
               <PageContainer>
@@ -90,11 +114,11 @@ export default class ChooseTicketsPage extends Component {
                   <div className="row mt-4">
                     <div className="col-9">
 
-                      <BigHall priceRanges={this.priceRanges} onSelectSeat={this.onSelectSeat} />
+                      <BigHall priceRanges={this.priceRanges} deletedSeat={this.state.deletedSeat} onSelectSeat={this.onSelectSeat} />
 
                     </div>
                     <div className="col-3">
-                      <SelectedTicketsTable priceRanges={this.priceRanges} selectedSeats={this.state.coordinates} />
+                      <SelectedTicketsTable priceRanges={this.priceRanges} selectedSeats={this.state.coordinates} onDeleteSelectedSeat={this.onDeleteSelectedSeat}/>
                     </div>
                   </div>
                 </div>

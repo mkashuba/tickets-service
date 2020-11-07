@@ -13,7 +13,10 @@ const Row = (props) => {
             countPlace.push(<Place  key={i} 
                                     rowNumber={props.rowNumber} 
                                     placeNumber={i} 
+                                    side={props.side}
                                     color={props.color} 
+                                    price={props.price}
+                                    deletedSeat={props.deletedSeat}
                                     onSelectSeat={props.onSelectSeat}/>);
         }
 
