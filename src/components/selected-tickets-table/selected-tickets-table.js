@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react';
+import {Link} from 'react-router-dom';
 
 import './selected-tickets-table.css';
 
@@ -12,46 +13,13 @@ const Ticket = ({row, place, side, onDeleteSelectedSeat}) => {
         </tr>
     );
 }
-
-class Prices extends Component {
-
-    state = {
-        priceRanges: []
-    }
-
-    componentDidMount() {
-        this.setState({
-            priceRanges: this.props.priceRanges
-        })
-    }
-
-    getPriceList = (priceRanges) => {
-        return priceRanges.map((item, i) => {
-            return <div key={i} className="range" style={{backgroundColor: `${item.color}`}}>{`$${item.price}.00`}</div>;
-        })
-    }
-
-    render() {
-
-        const priceList = this.getPriceList(this.state.priceRanges);
-
-        return (
-            <div className="tickets-info-area__prices">
-                <div className="prices__title">Price range:</div>
-                <div className="prices__range">
-                    {priceList}
-                </div>
-            </div>
-        );
-    }
-}
     
 
-const SelectedTicketsTable = ({priceRanges, selectedSeats, onDeleteSelectedSeat}) => {
+const SelectedTicketsTable = ({selectedSeats, onDeleteSelectedSeat}) => {
 
-    const tickets = selectedSeats.map((item, i) => {
+    let tickets = selectedSeats.length > 0 ? selectedSeats.map((item, i) => {
         return <Ticket key={i} row={item.row} place={item.seat} side={item.side} onDeleteSelectedSeat={onDeleteSelectedSeat} />;
-    })
+    }) : <p>No selected tickets</p>;
 
     let ticketsCount = null;
     let ticketsAmount = null;
@@ -64,8 +32,7 @@ const SelectedTicketsTable = ({priceRanges, selectedSeats, onDeleteSelectedSeat}
     }
     
     return (
-        <div className="tickets-info-area">
-            <Prices priceRanges={priceRanges} />
+        
             <div className="tickets-info-area__tickets">
                 <table className="tickets-info-area__tickets-list">
                     <tbody>
@@ -80,9 +47,14 @@ const SelectedTicketsTable = ({priceRanges, selectedSeats, onDeleteSelectedSeat}
                     <div className="amount__tickets">{ticketsCount}</div>
                     <div className="amount__money">{ticketsAmount}</div>
                 </div>
-                <a href="#" className="btn-to-card">To the cart</a>
+                <Link to={{
+                    pathname: "/shopping-cart",
+                    selectedTickets: {
+                        selectedSeats: selectedSeats
+                    }
+                }} className="btn-to-card">To the cart</Link>
             </div>
-        </div>
+        
     );
 }
 

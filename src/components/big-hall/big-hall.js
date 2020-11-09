@@ -34,7 +34,7 @@ const StageContainer = () => {
     );
 }
 
-const BigHall = ({priceRanges, onSelectSeat, deletedSeat}) => {
+const BigHall = ({priceRanges, onSelectSeat, deletedSeat, lockedSeats}) => {
 
     const getLastRowInRange = (item) => {
         let arrPropsNames = Object.getOwnPropertyNames(item.seats);
@@ -106,7 +106,7 @@ const BigHall = ({priceRanges, onSelectSeat, deletedSeat}) => {
               let count = ++i;
               if(count >=  getFirstRowInRange(item) && count <= getLastRowInRange(item)) {
 
-                  coloredRows.push(<Row color={item.color} side={side} deletedSeat={deletedSeat} price={item.price} key={count} {...row.props}/>);
+                  coloredRows.push(<Row color={item.color} side={side} lockedSeats={lockedSeats} deletedSeat={deletedSeat} price={item.price} key={count} {...row.props}/>);
 
               }
           })

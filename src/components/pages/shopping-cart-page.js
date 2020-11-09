@@ -3,11 +3,12 @@ import ErrorBoundry from '../error-boundry';
 import ShoppingCart from '../shopping-cart';
 import PageContainer from '../pages/page-container';
 
-const ShoppingCartPage = () => {
+const ShoppingCartPage = (props) => {
+
     return (
         <ErrorBoundry>
             <PageContainer>
-                <ShoppingCart />
+                <ShoppingCart selectedSeats={props.location.selectedTickets} />
             </PageContainer>
         </ErrorBoundry>
     );

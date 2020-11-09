@@ -199,17 +199,6 @@ h6 {
     text-align: center;
 }
 
-.high-price .hall-place {
-    background-color: rgb(253, 253, 135);
-}
-
-.medium-price .hall-place {
-    background-color: rgb(255, 203, 231);
-}
-
-.low-price .hall-place {
-    background-color: rgb(209, 255, 203);
-}
 
 
 .hall-place:hover {
@@ -269,7 +258,7 @@ h6 {
     flex-wrap: nowrap;
     text-align: center;
     margin-top: 30px;
-    min-width: 700px;
+    min-width: 600px;
 
     font-family: "FuturaFuturis";
 

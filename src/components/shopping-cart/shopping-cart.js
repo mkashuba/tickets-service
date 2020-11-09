@@ -1,15 +1,46 @@
 import React, {Component, Fragment} from 'react';
 import {Link} from 'react-router-dom';
+import SelectedTicketsTable from '../selected-tickets-table';
 
 import './shopping-cart.css';
 
 export default class ShoppingCart extends Component {
 
     state = {
-
+        coordinates: []
     }
 
+    componentDidMount() {
+        if(this.props.selectedSeats){
+            this.setState({
+                coordinates: this.props.selectedSeats.selectedSeats
+            })
+        }
+        
+    }
+
+    onDeleteSelectedSeat = (row, seat, side) => {
+        this.setState(({coordinates}) => {
+          const idx = coordinates.findIndex((item) => {
+            return row === item.row && seat === item.seat && side === item.side;
+          })
+    
+          const before = coordinates.slice(0, idx);
+          const after = coordinates.slice(idx + 1);
+          const newArr = [...before, ...after];
+          
+          localStorage.clear();
+          localStorage.setItem('Coordinates', JSON.stringify(newArr));
+          return {
+            deletedSeat: {row: row, seat: seat, side: side},
+            coordinates: newArr
+          }
+        })
+        
+      }
+
     render() {
+
         return(
             <Fragment>
 
@@ -30,31 +61,8 @@ export default class ShoppingCart extends Component {
                                 <div className="cart-info__title">Lady Gaga | The world tour 2018 | 2 January</div>
                                 <div className="cart-info__del">Delete selection</div>
                                 <div className="cart-info__tickets">
-                                    <table className="cart-info__tickets-list">
-                                        <tr>
-                                            <th>Row</th>
-                                            <th>Place</th>
-                                        </tr>
-                                        <tr>
-                                            <td className="row-ticket">5</td>
-                                            <td className="place-ticket">9</td>
-                                            <td className="del-ticket">x</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="row-ticket">5</td>
-                                            <td className="place-ticket">10</td>
-                                            <td className="del-ticket">x</td>
-                                        </tr>
-                                        <tr>
-                                            <td className="row-ticket">5</td>
-                                            <td className="place-ticket">11</td>
-                                            <td className="del-ticket">x</td>
-                                        </tr>
-                                    </table>
-                                    <div className="cart-info__amount d-flex justify-content-between">
-                                        <div className="amount__tickets">3 tickets</div>
-                                        <div className="amount__money">$458</div>
-                                    </div>
+                                    <SelectedTicketsTable selectedSeats={this.state.coordinates} onDeleteSelectedSeat={this.onDeleteSelectedSeat}/>
+
                                     <Link to='/paying' className="btn-pay">Pay</Link>
                                 </div>
                                 <div className="cart-info__terms-n-conditions"><input type="checkbox" /><span> I have read the <Link to='/terms'>Terms and Conditions</Link> and fully agree with them.</span></div>

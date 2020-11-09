@@ -7,7 +7,7 @@ export default class Place extends Component {
     state = {
         color: '',
         chooseSeat: false,
-        freeSeat: true,
+        isBusy: false,
         coordinates: {}
     }
 
@@ -28,9 +28,24 @@ export default class Place extends Component {
     }
 
     setDefaultColor = () => {
+      if(this.props.isSelected){
+
+        this.setState({
+          chooseSeat: true,
+          color: 'black'
+        })
+      }
       if(!this.state.chooseSeat){
         this.setState({
           color: this.props.color
+        })
+      }
+      
+      if(this.props.isBusy){
+
+        this.setState({
+          isBusy: true,
+          color: 'grey'
         })
       }
     }
@@ -42,7 +57,7 @@ export default class Place extends Component {
     }
 
     setChangedColor = () => {
-      if(!this.state.chooseSeat){
+      if(!this.state.chooseSeat && !this.state.isBusy){
         this.setState({
           color: '#ffc800'
         })
@@ -73,12 +88,15 @@ export default class Place extends Component {
 
     render(){
 
+    const wtf = !this.state.isBusy ? this.chooseSeat : () => {};
+
+
         return (
         <div className={`hall-place data-place-${this.props.placeNumber}`}
             style={{backgroundColor: `${this.state.color}`}}
             onMouseEnter={this.setChangedColor}
             onMouseLeave={this.setDefaultColor}
-            onClick={this.chooseSeat}
+            onClick={wtf}
         >
                 {this.props.placeNumber}
         </div>
